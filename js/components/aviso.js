@@ -7,16 +7,33 @@ app.component('aviso-item', {
     },
     template:
         /*html*/
-        `<ul>
-            <li style="border: 1px solid blue;" v-for="propiedad in item">{{ propiedad }}</li>
-        </ul>`,
+        `<div class="aviso-producto">
+            <span v-show="ultimasUnidades" class="aviso-ultimas">Ultimas unidades!</span>
+           <img :src="item.imagen" :alt="item.nombre">
+           <h3>{{ item.nombre }}</h3>
+           <p class="precio">$ {{ item.precio }}</p>
+           <span v-show="sinStock">Sin stock</span>
+           <button v-bind:disabled="sinStock" @click="agregarProducto(item)">comprar</button>
+        </div>`,
     data() {
         return {
 
         }
     },
-    methods: {},
-    computed: {},
+    methods: {
+        agregarProducto(item) {
+            this.$emit('agregar-al-carrito', item)
+        }
+    },
+    computed: {
+        ultimasUnidades() {
+            return this.item.stock < 5 && this.item.stock > 0
+        },
+        sinStock() {
+            return this.item.stock == 0
+        }
+
+    },
 })
 
 

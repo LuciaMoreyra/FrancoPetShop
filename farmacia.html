@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franco</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <div class="wrapper" id="app">
+        <header>
+            <img src="img/perro.jpg" alt="logo" class="imagen-logo">
+            <h1>Franco Pet Shop</h1>
+        </header>
+        <nav>
+            <span class="toggle-nav" @click="toggleNav"></span>
+            <ul class="nav-list" :class=" visible ? 'visible' :'not-visible'" @click="toggleNav">
+                <li><a href="index.html">index</a></li>
+                <li><a href="contacto.html">contacto</a></li>
+                <li> <a href="juguetes.html">Juguetes</a></li>
+                <li><a href="farmacia.html">Farmacia</a></li>
+            </ul>
+            <carrito-de-compras :listacompras="productoscarrito"></carrito-de-compras>
+        </nav>
+
+        <main>
+            <div class="container-productos">
+                <aviso-item :item="producto" :key="producto['._id']" v-for="producto in listaFarmacia"
+                    @agregar-al-carrito="agregarAlCarrito"></aviso-item>
+            </div>
+        </main>
+
+        <footer>
+            <!-- <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.6871479078895!2d-58.432567885052066!3d-34.61207176544663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405%20CCB%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1622657123324!5m2!1ses-419!2sar"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+
+        </footer>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/app.js"></script>
+    <script src="js/components/aviso.js"></script>
+    <script src="js/components/carrito.js"></script>
+    <script>
+        const m = app.mount('#app')
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 6rem;
+
+}
+
+header h1 {
+    margin-left: .5em;
+
+}
+
+.imagen-logo {
+    height: 95%;
+    width: 6rem;
+    border-radius: 50%;
+    border: 1px solid grey;
+    padding: .4em;
+    object-fit: cover;
+}
+
+/* nav */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CE3E76;
+    padding: .2em 2em;
+}
+
+.toggle-nav {
+    padding: .3rem;
+    border: 1px solid black;
+}
+
+.nav-list {
+    position: absolute;
+    top: 9.6rem;
+    left: 5%;
+    width: 90%;
+    text-align: center;
+    list-style: none;
+    z-index: 1000;
+    background-color: #CE3E76;
+}
+
+.not-visible {
+    display: none;
+}
+
+.visible {
+    display: flex,
+}
+
+.nav-list li {}
+
+.nav-list a {
+    text-decoration: none;
+    font-size: large;
+    padding: 1em;
+    margin: 1em;
+    display: block;
+
+}
+
+.carrito {
+    padding: .3rem;
+    border: 1px solid black
+}
+
+
+.container-productos {
+    display: grid;
+    grid-gap: 1em;
+    margin: 0 auto;
+}
+
+/* aviso */
+
+.aviso-producto {
+    width: 90%;
+    margin: .5em auto;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: .2em;
+    /* align-items: center; */
+    height: 90vh;
+    padding: 1rem;
+    position: relative;
+}
+
+.aviso-producto h3 {
+    font-size: 1.3rem;
+}
+
+.aviso-ultimas {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    color: red;
+    border: 1px solid red;
+    padding: .4em;
+    background-color: rgba(255, 0, 0, 0.25);
+
+}
+
+.precio {
+    color: #CE3E76;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.aviso-producto img {
+    width: 80%;
+    padding: .3em;
+    align-self: center;
+
+}
+
+.aviso-producto button {
+    width: 100%;
+    border-radius: .3em;
+    font-size: 1.2rem;
+    background-color: #78B800;
+    height: 2.6rem;
+    border: #4c7500;
+    cursor: pointer;
+    color: white;
+}
+
+.aviso-producto button:disabled {
+    color: grey;
+    background-color: #99ac77;
+    cursor: default;
+}
+
+/* home page */
+.main-home {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main-home h2,
+.main-home h3 {
+    margin: 1em 0;
+}
+
+
+/* contacto */
+.formulario {
+
+    text-align: center;
+
+}
+
+fieldset {
+    margin-top: 1.3em;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    border: none;
+}
+
+input[type="text"] {
+    height: 2rem;
+}
+
+label,
+legend {
+    margin-bottom: .5em;
+    margin-top: 1em;
+    /* color:tomato */
+}
+
+
+.radio-fields {
+    width: 40%;
+    display: inline-block;
+}
+
+.radio-fields label {
+    margin-left: .5em;
+    margin-right: 2.5em;
+}
+
+.boton-enviar {
+    border-radius: .3em;
+    font-size: 1.2rem;
+    background-color: #78B800;
+    height: 2.6rem;
+    border: #4c7500;
+
+    width: 90%;
+    color: white;
+}
+
+
+
+@media (min-width:600px) {
+    header {
+        padding: 0 4em;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+
+    /* nav */
+
+    .toggle-nav {
+        display: none;
+    }
+
+    .visible,
+    .not-visible {
+        display: flex;
+    }
+
+    .nav-list {
+        position: static;
+        width: auto;
+        text-align: center;
+    }
+
+    .nav-list a {
+        padding: .3rem;
+        margin: 0 1em;
+        border: 1px solid black;
+    }
+
+    .container-productos {
+        grid-template-columns: 1fr 1fr;
+        width: 90%;
+    }
+
+    .aviso-producto {
+        height: 70vh;
+    }
+
+}
+
+@media (min-width:768px) {
+
+    .container-productos {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 80%;
+    }
+
+    .main-home {
+        /* width: 90%; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .main-home content {
+        /*  */
+    }
+
+}
+
+@media (min-width:992px) {
+    .container-productos {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+
+    }
+}

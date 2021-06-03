@@ -6,27 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franco</title>
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
     <div class="wrapper" id="app">
-        <header></header>
-        <main>
+        <header>
+            <img src="img/perro.jpg" alt="logo" class="imagen-logo">
+            <h1>Franco Pet Shop</h1>
+        </header>
+        <nav>
+            <span class="toggle-nav" @click="toggleNav">toggle</span>
+            <ul class="nav-list" :class=" visible ? 'visible' :'not-visible'" @click="toggleNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li> <a href="juguetes.html">Juguetes</a></li>
+                <li><a href="farmacia.html">Farmacia</a></li>
 
-            <button @click="toggleArticulos">mostrar</button>
-            <div v-show="mostrar">
-                <aviso-item :item="articulo" :key="articulo.id" v-for="articulo in articulos"></aviso-item>
+            </ul>
+            <carrito-de-compras :listacompras="productoscarrito"></carrito-de-compras>
+        </nav>
+
+        <main class="main-home">
+            <div class="contenido">
+                <h2>Bienvenidos a mi tienda</h2>
+                <h3>Nuestra historia</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate quasi harum, enim quam
+                    odit
+                    aliquid nostrum, placeat hic quia eum inventore odio consectetur deserunt laboriosam quaerat a
+                    pariatur
+                    voluptatibus ut libero. Reiciendis dicta suscipit nobis ad, ea ratione hic cupiditate vitae sed est
+                    odio
+                    eaque eveniet error vel sapiente!</p>
+                <h3>Nuestro local</h3>
+                <p></p>
             </div>
         </main>
-        <footer></footer>
+
+        <footer>
+            <!-- <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.6871479078895!2d-58.432567885052066!3d-34.61207176544663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405%20CCB%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1622657123324!5m2!1ses-419!2sar"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+
+        </footer>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="js/app.js"></script>
-    <script src="js/components/aviso.js"></script>
+    <script src="js/components/carrito.js"></script>
     <script>
         const m = app.mount('#app')
     </script>
-
 </body>
 
 </html>
