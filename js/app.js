@@ -20,7 +20,7 @@ const app = Vue.createApp({
             // productos: [],
             productoscarrito: [],
             visible: false,
-
+            mostrarModal: false,
         }
     },
     created() {
@@ -39,6 +39,13 @@ const app = Vue.createApp({
         toggleNav() {
             this.visible = !this.visible
             console.log(this.visible)
+        },
+        // onSubmit(){
+        //     mostrarMensaje(this.mensajeForm)
+        // },
+        toggleModal() {
+            this.mostrarModal = !this.mostrarModal
+            console.log('cerrar')
         }
 
     },

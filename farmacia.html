@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franco</title>
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/estilos-aviso.css">
 </head>
 
 <body>
@@ -16,17 +17,22 @@
             <h1>Franco Pet Shop</h1>
         </header>
         <nav>
-            <span class="toggle-nav" @click="toggleNav"></span>
-            <ul class="nav-list" :class=" visible ? 'visible' :'not-visible'" @click="toggleNav">
-                <li><a href="index.html">index</a></li>
-                <li><a href="contacto.html">contacto</a></li>
-                <li> <a href="juguetes.html">Juguetes</a></li>
-                <li><a href="farmacia.html">Farmacia</a></li>
-            </ul>
-            <carrito-de-compras :listacompras="productoscarrito"></carrito-de-compras>
-        </nav>
+            <div class="nav-buttons">
+                <div  @click="toggleNav" class="toggle-nav" > <img src="./img/list.png" alt="toggle nav" ></div>
+                <carrito-de-compras :listacompras="productoscarrito"></carrito-de-compras>
+            </div>
+            <div>
+                <ul class="nav-list" :class=" visible ? 'visible' :'not-visible'" @click="toggleNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li> <a href="juguetes.html">Juguetes</a></li>
+                    <li><a href="farmacia.html">Farmacia</a></li>
+                </ul>
 
+            </div>
+        </nav>
         <main>
+            <h2>Farmacia</h2>
             <div class="container-productos">
                 <aviso-item :item="producto" :key="producto['._id']" v-for="producto in listaFarmacia"
                     @agregar-al-carrito="agregarAlCarrito"></aviso-item>
@@ -41,6 +47,7 @@
         </footer>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/components/aviso.js"></script>
     <script src="js/components/carrito.js"></script>
