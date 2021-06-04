@@ -11,7 +11,7 @@ app.component('aviso-item', {
             <span v-show="ultimasUnidades" class="aviso-ultimas">Ultimas unidades!</span>
            <img :src="item.imagen" :alt="item.nombre">
            <h3>{{ item.nombre }}</h3>
-           <p @click="mostrarDetalles">detalles</p>
+           <p @click="mostrarDetalles" class="detalles">detalles</p>
            <p class="precio">$ {{ item.precio }}</p>
            <span v-show="sinStock">Sin stock</span>
            <button v-bind:disabled="sinStock" @click="agregarProducto(item)">comprar</button>
@@ -26,7 +26,7 @@ app.component('aviso-item', {
 
             this.$emit('agregar-al-carrito', item)
             swal({
-                title:"Se agrego al carrito" ,
+                title: "Se agrego al carrito",
                 text: this.item.nombre,
                 icon: "success",
                 button: "Cerrar",
@@ -51,6 +51,3 @@ app.component('aviso-item', {
     },
 })
 
-
-// aviso de un producto
-// recibe objeto de un producto y lo muestra como un ul y a todas sus propiedades como li

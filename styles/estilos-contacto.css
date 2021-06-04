@@ -21,18 +21,24 @@ label,
 legend {
     margin-bottom: .5em;
     margin-top: 1em;
-    /* color:tomato */
 }
 
-
 .radio-fields {
-
     display: block;
 }
 
 .radio-fields label {
     margin-left: .5em;
     margin-right: 2.5em;
+}
+
+textarea {
+    border: 1px solid #4c7500;
+}
+
+textarea:focus-visible,
+input[type="text"]:focus-visible{
+    outline: none;
 }
 
 .boton-enviar {
@@ -49,6 +55,8 @@ legend {
 .boton-enviar:hover {
     background-color: #4c7500;
 }
+
+/*  */
 
 .modal {
     position: fixed;
@@ -79,21 +87,6 @@ legend {
 
 }
 
-/* .modal .cartel p {
-    margin-right: 1.2em;
-} */
-
-/* .modal .boton-cerrar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1.2em;
-    height: 1.2em;
-    border-radius: .3em;
-    color: #78B800;
-    line-height: 1em;
-    border: 1px solid #78B800;
-} */
 
 @media (min-width:768px) {
     .formulario {

@@ -18,12 +18,15 @@ app.component('carrito-de-compras', {
                 
            
             <div class="lista-carrito">
-                <ul >
-                    <li v-for="producto in listacompras">{{ producto.nombre }}   $ {{ producto.precio }}</li>
+                <ul>
+                    <li v-for="producto in listacompras">
+                    {{ producto.nombre }}   $ {{ producto.precio }} 
+                    <span @click="eliminarDelCarrito(producto)">eliminar</span>
+                    </li>
                 </ul>
             </div>
             <div class="total">Importe total: <span>$ {{ precioTotal }}</span></div>
-            <button>VER CARRITO</button>
+            <button @click="cartelCompra">COMPRAR</button>
         </div>
         
         </div>
@@ -37,7 +40,19 @@ app.component('carrito-de-compras', {
     methods: {
         toggleCarrito() {
             this.carritoVisible = !this.carritoVisible
-            console.log('mostrar carro')
+
+        },
+        eliminarDelCarrito(producto) {
+            this.$emit('eliminar-del-carrito', producto)
+        },
+        cartelCompra() {
+            if(cantidadProductos != 0) {
+              swal({
+                title: "Gracias por su compra!",
+                button: "Cerrar",
+            });
+            this.$emit('vaciar-carrito');  
+            }
         }
     },
     computed: {

@@ -18,8 +18,10 @@
         </header>
         <nav>
             <div class="nav-buttons">
-                <div  @click="toggleNav" class="toggle-nav" > <img src="./img/list.png" alt="toggle nav" ></div>
-                <carrito-de-compras :listacompras="productoscarrito"></carrito-de-compras>
+                <div @click="toggleNav" class="toggle-nav"> <img src="./img/list.png" alt="toggle nav"></div>
+                <carrito-de-compras :listacompras="productoscarrito" @eliminar-del-carrito="eliminarDelCarrito"
+                    @vaciar-carrito="vaciarCarrito">
+                </carrito-de-compras>
             </div>
             <div>
                 <ul class="nav-list" :class=" visible ? 'visible' :'not-visible'" @click="toggleNav">
@@ -28,7 +30,6 @@
                     <li> <a href="juguetes.html">Juguetes</a></li>
                     <li><a href="farmacia.html">Farmacia</a></li>
                 </ul>
-
             </div>
         </nav>
         <main class="main-contact">
@@ -37,28 +38,28 @@
                 <form class="formulario" @submit.prevent="toggleModal">
                     <fieldset>
                         <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre">
+                        <input type="text" name="nombre" id="nombre" required>
                         <label for="apellido">Apellido:</label>
                         <input type="text" name="apellido" id="apellido">
                         <label for="telefono">Telefono:</label>
-                        <input type="text" name="telefono" id="telefono">
+                        <input type="text" name="telefono" id="telefono" required>
                     </fieldset>
                     <fieldset class="radio-fields">
                         <legend>¿tenes perro?</legend>
                         <div>
-                            <input type="radio" name="perro" id="si">
-                            <label for="perro">Si</label>
-                            <input type="radio" name="perro" id="no">
-                            <label for="perro">No</label>
+                            <input type="radio" name="perro" id="si-perro" required>
+                            <label for="si-perro">Si</label>
+                            <input type="radio" name="perro" id="no-perro">
+                            <label for="no-perro">No</label>
                         </div>
                     </fieldset>
                     <fieldset class="radio-fields">
                         <legend>¿tenes gato?</legend>
                         <div>
-                            <input type="radio" name="perro" id="si">
-                            <label for="perro">Si</label>
-                            <input type="radio" name="perro" id="no">
-                            <label for="perro">No</label>
+                            <input type="radio" name="gato" id="si-gato" required>
+                            <label for="si-gato">Si</label>
+                            <input type="radio" name="gato" id="no-gato">
+                            <label for="no-gato">No</label>
                         </div>
                     </fieldset>
                     <fieldset>
@@ -66,19 +67,21 @@
                         <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
                     </fieldset>
                     <input type="submit" value="Enviar" class="boton-enviar">
-                    <modal v-if="mostrarModal" :msg="'Gracias por enviar sus datos'" @cerrar-modal="toggleModal">
+                    <modal v-if="mostrarModal" :msg="'Gracias por enviar sus comentarios'" @cerrar-modal="toggleModal">
                     </modal>
                 </form>
+
             </div>
         </main>
         <footer>
-            <!-- <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.6871479078895!2d-58.432567885052066!3d-34.61207176544663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405%20CCB%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1622657123324!5m2!1ses-419!2sar"
-                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
-
+            <p>★ (011) - 450 2738</p>
+            <p>★ Rio de Janeiro 300 (Caballito)</p>
+            <p>★ Envios a domicilio</p>
         </footer>
+
     </div>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/app.js"></script>
 
     <script src="js/components/carrito.js"></script>

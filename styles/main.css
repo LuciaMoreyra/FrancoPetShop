@@ -1,32 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Mali:wght@300;400;500&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Mali', cursive;
 }
 
 header {
     display: flex;
     align-items: center;
-    /* height: 6rem; */
-    background-color: #310b0b;
-    color: white;
+    color: #310b0b;
     padding: 1em 4em;
-
-
 }
 
 header h1 {
     margin-left: .5em;
-
-
+    font-family: 'Bad Script', cursive;
+    font-weight: bolder;
 }
 
 .imagen-logo {
-
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    border: 1px solid white;
+    border: 1px solid #310b0b;
     padding: .4em;
     object-fit: cover;
 }
@@ -83,12 +82,8 @@ nav {
     padding: 1em;
     margin: 1em;
     display: block;
-
 }
 
-/* .nav-list a:hover {
-    background-color: #a0305b;
-} */
 
 .carrito {
     margin-right: 1em;
@@ -97,7 +92,6 @@ nav {
     align-items: center;
     height: 2.5em;
     position: relative;
-
 }
 
 .carrito-cartel {
@@ -116,21 +110,23 @@ nav {
 }
 
 .carrito-cartel .titulo {
-
     color: #CE3E76;
     border-bottom: 1px solid rgba(128, 128, 128, 0.342);
 
 }
 
-
 .carrito-cartel .lista-carrito ul {
     list-style: none;
 }
 
-.carrito-cartel .lista-carrito li {
+.lista-carrito li {
     border-bottom: 1px solid rgba(128, 128, 128, 0.342);
+}
 
-
+.lista-carrito span {
+    color: grey;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .carrito-cartel .total {
@@ -161,6 +157,24 @@ nav {
     cursor: pointer;
 }
 
+/* banner home page */
+.banner {
+    height: 35vh;
+    background-image: url(../img/banner-perrito.jpg);
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: .1em;
+}
+
+.banner h2 {
+    color: white;
+    font-size: 1.2rem;
+    padding: .3em;
+}
+
 
 /* home page */
 main {
@@ -169,7 +183,7 @@ main {
 }
 
 .main-home section {
-    border: 1px solid green;
+    border: 1px solid rgba(128, 128, 128, 0.342);
     padding: 1em;
     margin: 1em;
 }
@@ -195,11 +209,20 @@ main h3 {
 
 
 footer {
-    background-color: #310b0b;
-    height: 2.5rem;
+    background-color: rgba(128, 128, 128, 0.342);
+    color: #310b0b;
+    text-align: center;
     margin-top: 1.5rem;
 }
 
+/* modal swal */
+.swal-button {
+    background-color: #CE3E76
+}
+
+.swal-button:not([disabled]):hover {
+    background-color: #a8305ed7;
+}
 
 @media (min-width:600px) {
     header h1 {
@@ -240,7 +263,6 @@ footer {
         padding: 0;
         margin: 0 1em;
         line-height: 2.5em;
-        /* border: 1px solid black; */
     }
 
     .carrito {
@@ -250,34 +272,38 @@ footer {
     .carrito-cartel {
         width: 40vw;
     }
+
+    .banner {
+        height: 70vh;
+        background-image: url(../img/banner-perrito.jpg);
+        margin-top: .1em;
+    }
+
+    .banner h2 {
+        color: white;
+        font-size: 2.8rem;
+        padding: .5em;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+    }
 }
+
 
 
 @media (min-width:768px) {
-
-    /* .container-productos {
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 80%;
-    } */
-
     .main-home section {
-        /* width: 90%; */
         display: grid;
-        grid-template-columns: 1fr 1fr;
-
-
+        grid-template-columns: 2fr 1fr;
     }
 
-    .main-home content {
-        /*  */
+    .main-home section:first-of-type {
+        grid-template-columns: auto;
     }
+
+
 
 }
 
-@media (min-width:992px) {
-    /* .container-productos {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-
-
-    } */
-}

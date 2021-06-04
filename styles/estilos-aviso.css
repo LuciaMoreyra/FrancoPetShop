@@ -10,7 +10,7 @@
 .aviso-producto {
     width: 90%;
     margin: .5em auto;
-    border:1px solid rgba(128, 128, 128, 0.342);
+    border: 1px solid rgba(128, 128, 128, 0.342);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,6 +35,11 @@
     padding: .4em;
     background-color: rgba(255, 0, 0, 0.25);
 
+}
+
+.detalles {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .precio {
@@ -75,7 +80,7 @@
 @media (min-width:600px) {
     .container-productos {
         grid-template-columns: 1fr 1fr;
-       
+
     }
 
     .aviso-producto {
@@ -89,7 +94,7 @@
 
     .container-productos {
         grid-template-columns: 1fr 1fr 1fr;
-       
+
     }
 }
 

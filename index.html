@@ -17,8 +17,9 @@
         </header>
         <nav>
             <div class="nav-buttons">
-                <div  @click="toggleNav" class="toggle-nav" > <img src="./img/list.png" alt="toggle nav" ></div>
-                <carrito-de-compras :listacompras="productoscarrito"></carrito-de-compras>
+                <div @click="toggleNav" class="toggle-nav"> <img src="./img/list.png" alt="toggle nav"></div>
+                <carrito-de-compras :listacompras="productoscarrito" @eliminar-del-carrito="eliminarDelCarrito"
+                    @vaciar-carrito="vaciarCarrito"></carrito-de-compras>
             </div>
             <div>
                 <ul class="nav-list" :class=" visible ? 'visible' :'not-visible'" @click="toggleNav">
@@ -31,28 +32,36 @@
             </div>
         </nav>
 
+        <div class="banner">
+            <h2>Bienvenidos a mi tienda</h2>
+        </div>
         <main class="main-home">
             <div class="contenido">
-                <h2>Bienvenidos a mi tienda</h2>
+                <!-- <h2>Bienvenidos a mi tienda</h2> -->
                 <section>
                     <div>
                         <h3>Nuestra historia</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate quasi harum, enim
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate quasi harum,
+                            enim
                             quam
                             odit
-                            aliquid nostrum, placeat hic quia eum inventore odio consectetur deserunt laboriosam quaerat
+                            aliquid nostrum, placeat hic quia eum inventore odio consectetur deserunt laboriosam
+                            quaerat
                             a
                             pariatur
-                            voluptatibus ut libero. Reiciendis dicta suscipit nobis ad, ea ratione hic cupiditate vitae
+                            voluptatibus ut libero. Reiciendis dicta suscipit nobis ad, ea ratione hic cupiditate
+                            vitae
                             sed
                             est
                             odio
                             eaque eveniet error vel sapiente!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate quasi harum, enim
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate quasi harum,
+                            enim
 
                             a
                             pariatur
-                            voluptatibus ut libero. Reiciendis dicta suscipit nobis ad, ea ratione hic cupiditate vitae
+                            voluptatibus ut libero. Reiciendis dicta suscipit nobis ad, ea ratione hic cupiditate
+                            vitae
                             sed
                             est
                             odio
@@ -68,21 +77,26 @@
                     </div>
                     <div>
                         <h3>Nuestro local</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ex eveniet,.</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ex eveniet,.</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ex eveniet,.</p>
+                        <p>Rio de Janeiro 300 (Caballito)</p>
+                        <p>Envios a domicilio</p>
+                        <p>Telefono: (011) - 450 2738</p>
+                        <p>Email: tiendafranco@gmail.com</p>
 
                     </div>
 
                 </section>
             </div>
-    </div>
-    </main>
+        </main>
 
-    <footer>
-    </footer>
+        <footer>
+            <p>★ (011) - 450 2738</p>
+            <p>★ Rio de Janeiro 300 (Caballito)</p>
+            <p>★ Envios a domicilio</p>
+        </footer>
+
     </div>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/components/carrito.js"></script>
     <script>
