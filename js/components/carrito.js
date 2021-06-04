@@ -46,7 +46,7 @@ app.component('carrito-de-compras', {
             this.$emit('eliminar-del-carrito', producto)
         },
         cartelCompra() {
-            if(cantidadProductos != 0) {
+            if(this.cantidadProductos != 0) {
               swal({
                 title: "Gracias por su compra!",
                 button: "Cerrar",
