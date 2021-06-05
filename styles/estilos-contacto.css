@@ -93,10 +93,6 @@ input[type="text"]:focus-visible{
         width: 60%;
     }
 
-    .radio-fields {
-        width: 40%;
-        display: inline-block;
-    }
 
     .radio-fields label {
         margin-left: .5em;

@@ -160,7 +160,7 @@ nav {
 /* banner home page */
 .banner {
     height: 35vh;
-    background-image: url(../img/banner-perrito.jpg);
+    background-image: url(../img/banner-perrito-1500-550.jpg);
     background-position: bottom;
     background-size: cover;
     display: flex;
@@ -275,7 +275,7 @@ footer {
 
     .banner {
         height: 70vh;
-        background-image: url(../img/banner-perrito.jpg);
+        background-image: url(../img/banner-perrito-1500-550.jpg);
         margin-top: .1em;
     }
 
