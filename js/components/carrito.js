@@ -51,6 +51,7 @@ app.component('carrito-de-compras', {
                 title: "Gracias por su compra!",
                 button: "Cerrar",
             });
+            this.toggleCarrito();
             this.$emit('vaciar-carrito');  
             }
         }

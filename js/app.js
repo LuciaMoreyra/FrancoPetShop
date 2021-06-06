@@ -21,13 +21,28 @@ const app = Vue.createApp({
             this.getListaCarrito();
             this.productoscarrito.push(producto);
             producto.stock -= 1;
+            console.log(producto.stock)
             this.setListaCarrito();
         },
         eliminarDelCarrito(producto) {
             this.getListaCarrito();
-            let indice = this.productoscarrito.indexOf(producto);
-            this.productoscarrito.splice(indice, 1);
-            producto.stock += 1;
+            // eliminar el producto del carrito
+            for (let index = 0; index < this.productoscarrito.length; index++) {
+                const item = this.productoscarrito[index];
+                if (producto._id == item._id) {
+                    console.log(item);
+                    this.productoscarrito.splice(index, 1);
+                    break;
+                }
+            }
+            // aumentar el stock en los productos totales
+            for (let index = 0; index < this.productos.length; index++) {
+                const item = this.productos[index];
+                if (producto._id == item._id) {
+                    item.stock += 1;
+                    console.log(item.stock);
+                }
+            }
             this.setListaCarrito();
         },
         vaciarCarrito() {
